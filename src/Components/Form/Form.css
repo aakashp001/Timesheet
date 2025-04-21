@@ -1,7 +1,7 @@
 /* Form.css */
   root {
-    --base-spacing-unit: 24px;
-    --half-spacing-unit: calc(var(--base-spacing-unit) / 2);
+    --base-spacing-unit: 34px;
+    --half-spacing-unit: calc(var(--base-spacing-unit));
 
     --color-alpha: #1772FF;
     --color-form-highlight: #EEEEEE;
@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: gray;
+    background-color: white;
     padding: var(--base-spacing-unit);
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -38,30 +38,37 @@ table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
+    border: 1px solid #213B77;
 }
 
 th,
 td {
     text-align: center;
-    padding: calc(var(--half-spacing-unit) * 2);
     word-wrap: break-word;
     min-width: 120px;
+    border: 1px solid white;
+}
+
+th{
+    padding: 20px;
+}
+td{
+    padding: 10px;
 }
 
 .header-item {
     text-transform: uppercase;
-    background: var(--color-header-background, #000);
+    background:#79BD42;
     color: white;
-    padding: calc(var(--half-spacing-unit) * 2); 
+    padding:20px; 
 }
 
 .data {
-    background: white;
+    background-color: #213B77;
+    color: white;
+    border: 1px solid white;
 }
 
-tr:nth-of-type(odd) .data {
-    background: var(--color-form-highlight);
-}
 
 .filter {
     color: white;
@@ -94,13 +101,4 @@ tr:nth-of-type(odd) .data {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: var(--half-spacing-unit);
-    }
 
-    .header-item,
-    .data {
-        font-size: 14px;
-    }
-}
