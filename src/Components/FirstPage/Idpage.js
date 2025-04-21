@@ -20,8 +20,7 @@ export default function IdPage() {
 
     const out = new Date(current);
     out.setHours(out.getHours() + 8);
-    setOutTime(out);
-
+    setOutTime(out);  
     setLoggedIn(true);
   };
 

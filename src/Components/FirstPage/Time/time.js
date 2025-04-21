@@ -28,9 +28,9 @@ useEffect(() => {
              <span className='value'>
              {' '}
               {dateState.toLocaleDateString('en-GB', {
-                 day: 'numeric',
-                 month: 'short',
-                 year: 'numeric',
+                 day:"numeric",
+                 month:"short",
+                 year:"numeric",
               })}
              </span>
 
@@ -39,7 +39,7 @@ useEffect(() => {
                  <span className='value'>
                  {' '}
                 {day.toLocaleDateString('en-GB', {
-                     weekday: 'long',
+                     weekday:"long",
                 })}
                  </span>
                  </h3>
