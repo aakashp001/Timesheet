@@ -1,108 +1,39 @@
 
+
 import React from 'react';
 import './Form.css';
+import { User } from '../user/User';
 
 function Form() {
-
-
-  
   return (
     <div className="container">
       <div className="form">
         <table>
           <thead className="header">
             <tr>
-              <th className="header-item"><a className="filter" href="#">S.no</a></th>
-              <th className="header-item"><a className="filter" href="#">Employee Id</a></th>
-              <th className="header-item"><a className="filter" href="#">Name</a></th>
-              <th className="header-item"><a className="filter" href="#">Date</a></th>
-              <th className="header-item"><a className="filter" href="#">Day</a></th>
-              <th className="header-item"><a className="filter" href="#">Time</a></th>
-              <th className="header-item"><a className="filter" href="#">In / Out</a></th>
-              <th className="header-item"><a className="filter" href="#">Total Duration</a></th>
+              <th className="header-item">S.no</th>
+              <th className="header-item">Employee Id</th>
+              <th className="header-item">Name</th>
+              <th className="header-item">Date</th>
+              <th className="header-item">Day</th>
+              <th className="header-item">Time</th>
+              <th className="header-item">IN/Out</th>
+              <th className="header-item">Duration</th>
             </tr>
           </thead>
           <tbody className="all-content">
-            <tr className="content-row">
-              <td className="data">1</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">09:00 AM</td>
-              <td className="data">IN</td>
-              <td className="data">-</td>
-            </tr>
-            <tr className="content-row">
-              <td className="data">2</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">11:00 AM</td>
-              <td className="data">OUT</td>
-              <td className="data">2 hours</td>
-            </tr>
-            <tr className="content-row">
-              <td className="data">3</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">11:15 AM</td>
-              <td className="data">IN</td>
-              <td className="data">2 hours</td>
-            </tr>
-            <tr className="content-row">
-              <td className="data">4</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">01:00 PM</td>
-              <td className="data">OUT</td>
-              <td className="data">3 hours 45 minutes</td>
-            </tr>
-            <tr className="content-row">
-              <td className="data">5</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">01:15 PM</td>
-              <td className="data">IN</td>
-              <td className="data">3 hours 45 minutes</td>
-            </tr>
-            <tr className="content-row">
-              <td className="data">6</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">04:00 PM</td>
-              <td className="data">OUT</td>
-              <td className="data">6 hours 15 minutes</td>
-            </tr>
-            <tr className="content-row">
-              <td className="data">7</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">04:15 PM</td>
-              <td className="data">IN</td>
-              <td className="data">6 hours 15 minutes</td>
-            </tr>
-            <tr className="content-row">
-              <td className="data">8</td>
-              <td className="data">001</td>
-              <td className="data">John Doe</td>
-              <td className="data">22-06-2025</td>
-              <td className="data">Monday</td>
-              <td className="data">06:00 PM</td>
-              <td className="data">OUT</td>
-              <td className="data">8 hours</td>
-            </tr>
+            {User.map((user, index) => (
+              <tr className="content-row" key={user.id}>
+                <td className="data">{index + 1}</td>
+                <td className="data">{user.id}</td>
+                <td className="data">{user.name}</td>
+                <td className="data">{user.date}</td>
+                <td className="data">{user.day}</td>
+                <td className="data">{user.time}</td>
+                <td className="data">{user.InOut}</td>
+                <td className="data">{user.totalDuration}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
